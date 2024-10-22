@@ -1,0 +1,126 @@
+const featuredListings = [
+    {
+        title: "Vila di Kasihan",
+        description: "Villa Blue Steps, vila pribadi dengan pemandangan sawah",
+        rating: 4.95,
+        reviews: 150,
+        image: "/api/placeholder/300/300",
+        details: "Villa Blue Steps, berbatasan dengan 100+ hektar persawahan yang dikelilingi perbukitan hijau berjarak 10-15 menit dari pusat kota"
+    },
+    {
+        title: "Bungalo di Kasihan",
+        description: "Sawah Breeze House dengan Panorama Indah",
+        rating: 4.94,
+        reviews: 268,
+        image: "/api/placeholder/300/300",
+        details: "Rumah terang dan nyaman ini menawarkan panorama indah di atas sawah"
+    },
+    {
+        title: "Rumah di Mlati",
+        description: "Hygge Guesthouse Jogja - Scandinavian",
+        rating: 4.94,
+        reviews: 295,
+        image: "/api/placeholder/300/300",
+        details: "Gaya Skandinavia, dengan 'Hygge' sebagai tema rumah"
+    },
+    {
+        title: "Vila di Yogyakarta",
+        description: "UMAH D'KALI - villa pribadi",
+        rating: 4.95,
+        reviews: 133,
+        image: "/api/placeholder/300/300",
+        details: "VILLA PRIBADI UMAH D'KALI berada di desa budaya Kasongan"
+    }
+];
+
+const propertyTypes = [
+    {
+        type: "Vila",
+        description: "Bangunan mewah untuk liburan terbaik",
+        image: "/api/placeholder/400/300"
+    },
+    {
+        type: "Rumah",
+        description: "Tempat untuk Anda sendiri, cukup luas untuk semua",
+        image: "/api/placeholder/400/300"
+    },
+    {
+        type: "Apartemen",
+        description: "Lokasi strategis dengan perlengkapan sehari-hari",
+        image: "/api/placeholder/400/300"
+    }
+];
+
+const nearbyDestinations = [
+    { name: "Semarang", type: "Sewa tempat liburan" },
+    { name: "Surakarta", type: "Sewa tempat liburan" },
+    { name: "Dieng Plateau", type: "Sewa tempat liburan" },
+    { name: "Tawangmangu", type: "Sewa tempat liburan" },
+    { name: "Bandungan", type: "Sewa tempat liburan" },
+    { name: "Magelang", type: "Sewa tempat liburan" },
+    { name: "Purwokerto", type: "Sewa tempat liburan" },
+    { name: "Baturaden", type: "Sewa tempat liburan" },
+    { name: "Salatiga", type: "Sewa tempat liburan" },
+    { name: "Jepara", type: "Sewa tempat liburan" },
+    { name: "Danau Telaga Sarangan", type: "Sewa tempat liburan" },
+    { name: "Jakarta", type: "Sewa tempat liburan" }
+];
+
+function createListingCards() {
+    const listingsGrid = document.querySelector('.listings-grid');
+    
+    featuredListings.forEach(listing => {
+        const card = document.createElement('div');
+        card.className = 'listing-card';
+        card.innerHTML = `
+            <img src="${listing.image}" alt="${listing.title}">
+            <div class="listing-info">
+                <div class="listing-rating">
+                    <span>⭐ ${listing.rating} (${listing.reviews})</span>
+                </div>
+                <h3>${listing.title}</h3>
+                <p>${listing.description}</p>
+                <p class="listing-details">${listing.details}</p>
+            </div>
+        `;
+        listingsGrid.appendChild(card);
+    });
+}
+
+function createPropertyCards() {
+    const propertyGrid = document.querySelector('.property-grid');
+    
+    propertyTypes.forEach(property => {
+        const card = document.createElement('div');
+        card.className = 'property-card';
+        card.innerHTML = `
+            <img src="${property.image}" alt="${property.type}">
+            <div class="property-info">
+                <h3>${property.type}</h3>
+                <p>${property.description}</p>
+            </div>
+        `;
+        propertyGrid.appendChild(card);
+    });
+}
+
+function createDestinationLinks() {
+    const destinationsGrid = document.querySelector('.destinations-grid');
+    
+    nearbyDestinations.forEach(destination => {
+        const link = document.createElement('a');
+        link.className = 'destination-link';
+        link.href = '#';
+        link.innerHTML = `
+            <h3>${destination.name}</h3>
+            <p>${destination.type}</p>
+        `;
+        destinationsGrid.appendChild(link);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    createListingCards();
+    createPropertyCards();
+    createDestinationLinks();
+});
