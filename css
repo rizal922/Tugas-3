@@ -1,0 +1,220 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #222;
+    line-height: 1.4;
+}
+
+/* Header styles */
+header {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 32px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.host-button {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.search-button {
+    background: #ff385c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Main search section */
+.search-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.search-container {
+    max-width: 850px;
+    margin: 2rem auto;
+}
+
+.search-box {
+    display: flex;
+    background: white;
+    border-radius: 32px;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem;
+    gap: 1rem;
+}
+
+.location-input,
+.date-input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    text-align: left;
+}
+
+.search-box label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-btn {
+    background: #ff385c;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 0 2rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Featured listings */
+.featured-listings {
+    padding: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.listing-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.listing-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.listing-info {
+    padding: 1rem 0;
+}
+
+.listing-rating {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+/* Property types */
+.property-types {
+    padding: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.property-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.property-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+/* Nearby destinations */
+.nearby-destinations {
+    padding: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.destination-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 2rem;
+    background: #f7f7f7;
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.breadcrumb {
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    color: #222;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: #222;
+    text-decoration: none;
+}
